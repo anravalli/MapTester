@@ -40,12 +40,14 @@ Risk MappAssistedCollisionAhead::calculateRisk(void)
 			bool ego_on_the_right = the_ego.m_currentSegment.relative_position.y < 0;
 			bool other_on_the_right = the_other.m_currentSegment.relative_position.y < 0;
 			double delta_speed = the_ego.m_speed-the_other.m_speed;
+			std::cout << "--> the_ego.m_speed: " << the_ego.m_speed << std::endl;
+			std::cout << "--> the_other.m_speed: " << the_other.m_speed << std::endl;
+			std::cout << "--> delta_speed: " << delta_speed << std::endl;
 			// bool ego_approaching_other = (delta_speed)>0;
 			if(ego_on_the_right == other_on_the_right //are EGO and OTHER proceeding on the same direction?
 				and  delta_speed > 0// is the EGO approaching the OTHER?
 			){
 				std::cout << "--> (3/3) same direction and approaching" << std::endl;
-				std::cout << "--> delta_speed: " << delta_speed << std::endl;
 				risk.risk = RiskTYpe::assistedCollisionAhead;
 				risk.dti = std::sqrt(sqred_dist); //meters
 				risk.tti = risk.dti/delta_speed; // km/(km/h)

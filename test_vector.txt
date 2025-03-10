@@ -8,5 +8,6 @@ test	role	position				mapmatch				incident
 3		other	45.43488473,9.17795397	Via Lodovico Montegani
 4		ego		45.43496280,9.17697145	Via Nicola Palmieri		no
 4		other	45.43494844,9.17792351	Via Nicola Palmieri
-
+5		ego		45.43496280,9.17697947	Via Nicola Palmieri		no
+5		other	45.43494934,9.17790588	Via Nicola Palmieri
 
