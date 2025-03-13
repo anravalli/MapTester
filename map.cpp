@@ -41,7 +41,7 @@ void Map::loadMap(const std::string &osmFile)
     extractBounds(doc);
     extractStreets(doc);
     if (!m_streets.empty()) {
-        printStreets();
+        // printStreets();
     }
 }
 

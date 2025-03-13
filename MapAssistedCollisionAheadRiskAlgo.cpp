@@ -25,9 +25,19 @@ Risk MappAssistedCollisionAhead::calculateRisk(void)
 	}
 
 	Geodesy::Point rel_pos = Geodesy::relativePosition(positionDegToRad(the_ego.m_pos),
-													   the_ego.m_heading, positionDegToRad(the_other.m_pos));
+													   Geodesy::degToRad(the_ego.m_heading),
+													   positionDegToRad(the_other.m_pos));
 	double sqred_dist = rel_pos.x*rel_pos.x + rel_pos.y*rel_pos.y;
 	double sqred_radius = detection_radius*detection_radius;
+	bool ego_on_the_right = the_ego.m_currentSegment.relative_position.y < 0;
+	bool other_on_the_right = the_other.m_currentSegment.relative_position.y < 0;
+	double delta_speed = the_ego.m_speed-the_other.m_speed;
+	std::cout << "--> is OTGHER in EGO detection radius? (" << sqred_dist << "<" << sqred_radius <<"):" << (sqred_dist < sqred_radius) << std::endl;
+	std::cout << "--> is EGO on the right? " << ego_on_the_right << std::endl;
+	std::cout << "--> is OTHER on the right? " << other_on_the_right << std::endl;
+	std::cout << "--> is the OTHER ahead of EGO? (" << rel_pos.x << ") " << (rel_pos.x>0) << std::endl;
+	std::cout << "--> is the EGO approaching the OTHER? (" << delta_speed << ") " << (delta_speed>0) << std::endl;
+
 	if(sqred_dist < sqred_radius)
 	{
 		std::cout << "--> (1/3) inside detection radius" << std::endl;
@@ -37,12 +47,6 @@ Risk MappAssistedCollisionAhead::calculateRisk(void)
 		)
 		{
 			std::cout << "--> (2/3) same street and other ahead" << std::endl;
-			bool ego_on_the_right = the_ego.m_currentSegment.relative_position.y < 0;
-			bool other_on_the_right = the_other.m_currentSegment.relative_position.y < 0;
-			double delta_speed = the_ego.m_speed-the_other.m_speed;
-			std::cout << "--> the_ego.m_speed: " << the_ego.m_speed << std::endl;
-			std::cout << "--> the_other.m_speed: " << the_other.m_speed << std::endl;
-			std::cout << "--> delta_speed: " << delta_speed << std::endl;
 			// bool ego_approaching_other = (delta_speed)>0;
 			if(ego_on_the_right == other_on_the_right //are EGO and OTHER proceeding on the same direction?
 				and  delta_speed > 0// is the EGO approaching the OTHER?

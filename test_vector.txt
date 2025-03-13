@@ -1,13 +1,40 @@
 map: map_2.osm
-test	role	position				mapmatch				incident
-1		ego		45.43495688,9.17813101	Via Nicola Palmieri		yes
-1		other	45.43495095,9.17862207	Via Nicola Palmieri
-2		ego		45.43496280,9.17697145	Via Nicola Palmieri		yes
-2		other	45.43496011,9.17791390	Via Nicola Palmieri
-3		ego		45.43496280,9.17697145	Via Nicola Palmieri		no
-3		other	45.43488473,9.17795397	Via Lodovico Montegani
-4		ego		45.43496280,9.17697145	Via Nicola Palmieri		no
-4		other	45.43494844,9.17792351	Via Nicola Palmieri
-5		ego		45.43496280,9.17697947	Via Nicola Palmieri		no
-5		other	45.43494934,9.17790588	Via Nicola Palmieri
+test	role	position					speed	head			mapmatch				road-side	in-range	incident
+1		ego		45.43495688,9.17813101		30		20				Via Nicola Palmieri		lx			yes			yes
+1		other	45.43495095,9.17862207		3		15				Via Nicola Palmieri		lx
+2		ego		45.43496280,9.17697145		30		20				Via Nicola Palmieri		lx			yes			yes
+2		other	45.43496011,9.17791390		3		15				Via Nicola Palmieri		lx
+3		ego		45.43496280,9.17697145		30		20				Via Nicola Palmieri		lx			yes			no
+3		other	45.43488473,9.17795397		3		15				Via Lodovico Montegani	lx
+4		ego		45.43496280,9.17697145		30		20				Via Nicola Palmieri		lx			yes			no
+4		other	45.43494844,9.17792351		3		15				Via Nicola Palmieri		lx
+5		ego		45.43496280,9.17697947		30		20				Via Nicola Palmieri		lx			yes			no
+5		other	45.43494934,9.17790588		3		15				Via Nicola Palmieri		lx
 
+map: map_thunderhill.osm
+1		ego		39.53989464,-122.34115140	30						Thunderhill Raceway		rx			no			no
+1		other	39.54093021,-122.33852693	3						Thunderhill Raceway		rx
+2		ego		39.54065514,-122.33971259	30						Thunderhill Raceway		rx			yes			no
+2		other	39.54093021,-122.33852693	3						Thunderhill Raceway		lx
+3		ego		39.54065514,-122.33971259	30						Thunderhill Raceway		rx			yes			no
+3		other	39.54091727,-122.33852373	3						Thunderhill Raceway		lx
+4		ego		39.54067456,-122.33974784	30						Thunderhill Raceway		rx			yes			no
+4		other	39.54094316,-122.33855898	3						Thunderhill Raceway		lx
+5		ego		39.54096905,-122.33897556 	30						Thunderhill Raceway		rx			yes			no
+5		other	39.54094316,-122.33855898	3						Thunderhill Raceway		lx
+6		ego		39.54097645,-122.33870378	30
+6		other	39.54072525,-122.33825445	3
+7		ego		39.54072525,-122.33825445
+7		other	39.54097645,-122.33870378
+8		ego		39.53992096,-122.33894984	30		260				Thunderhill Raceway		lx						yes
+8		other	39.53983282,-122.33936708	3		230				Thunderhill Raceway                 yes
+9		ego		39.54075169,-122.33950616	30		-55.13			Thunderhill Raceway								yes
+9		other	39.54096543,-122.33862889	3		-31.675			Thunderhill Raceway                 yes
+10		ego		39.54063711,-122.33974794	30		-55.13			Thunderhill Raceway		lx						yes
+10		other	39.54095662,-122.33861605	3		-31.675			Thunderhill Raceway		lx          yes
+11		ego		39.54063711,-122.33974794	30		-55.13			Thunderhill Raceway		lx						yes
+11		other	39.54072525,-122.33825445	3		-13.583			Thunderhill Raceway		lx          yes
+12		ego		39.53749503,-122.33308734			0.412261		Thunderhill Raceway		rx						no
+12		other	39.53705167,-122.33309535			0.412261		Thunderhill Raceway		rx			yes
+13		ego		39.53749503,-122.33308734			180.412261		Thunderhill Raceway		rx						no
+13		other	39.53705167,-122.33309535			180.412261		Thunderhill Raceway		rx			yes

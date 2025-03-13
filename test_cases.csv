@@ -1,0 +1,15 @@
+test	role	position					speed	head			mapmatch				road-side	in-range	incident
+8		ego		39.53992096,-122.33894984	30		260				Thunderhill Raceway		lx			-			yes
+8		other	39.53983282,-122.33936708	3		230				Thunderhill Raceway		lx			yes
+9		ego		39.54075169,-122.33950616	30		-55.13			Thunderhill Raceway		lx			-			yes
+9		other	39.54096543,-122.33862889	3		-31.675			Thunderhill Raceway		lx			yes
+10		ego		39.54063711,-122.33974794	30		-55.13			Thunderhill Raceway		lx			-			yes
+10		other	39.54095662,-122.33861605	3		-31.675			Thunderhill Raceway		lx			yes
+11		ego		39.54063711,-122.33974794	30		-55.13			Thunderhill Raceway		lx			-			yes
+11		other	39.54072525,-122.33825445	3		-13.583			Thunderhill Raceway		lx			yes
+12		ego		39.53749503,-122.33308734	30		0.412261		Thunderhill Raceway		rx			-			no
+12		other	39.53705167,-122.33309535	3		0.412261		Thunderhill Raceway		rx			yes
+13		ego		39.53749503,-122.33308734	30		180.412261		Thunderhill Raceway		rx			-			yes
+13		other	39.53705167,-122.33309535	3		180.412261		Thunderhill Raceway		rx			yes
+14		ego		39.53749503,-122.33308734	30		180.412261		Thunderhill Raceway		rx			-			yes (no)
+15		other	39.53705167,-122.33312419	3		180.412261		Thunderhill Raceway		lx			yes
