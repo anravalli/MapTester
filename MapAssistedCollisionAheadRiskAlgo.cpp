@@ -25,7 +25,7 @@ Risk MappAssistedCollisionAhead::calculateRisk(void)
 	}
 
 	Geodesy::Point rel_pos = Geodesy::relativePosition(positionDegToRad(the_ego.m_pos),
-													   Geodesy::degToRad(the_ego.m_heading),
+													   the_ego.m_heading,
 													   positionDegToRad(the_other.m_pos));
 	double sqred_dist = rel_pos.x*rel_pos.x + rel_pos.y*rel_pos.y;
 	double sqred_radius = detection_radius*detection_radius;
@@ -48,8 +48,8 @@ Risk MappAssistedCollisionAhead::calculateRisk(void)
 		{
 			std::cout << "--> (2/3) same street and other ahead" << std::endl;
 			// bool ego_approaching_other = (delta_speed)>0;
-			if(ego_on_the_right == other_on_the_right //are EGO and OTHER proceeding on the same direction?
-				and  delta_speed > 0// is the EGO approaching the OTHER?
+			if(/*ego_on_the_right == other_on_the_right //are EGO and OTHER proceeding on the same direction?
+				and*/  delta_speed > 0// is the EGO approaching the OTHER?
 			){
 				std::cout << "--> (3/3) same direction and approaching" << std::endl;
 				risk.risk = RiskTYpe::assistedCollisionAhead;

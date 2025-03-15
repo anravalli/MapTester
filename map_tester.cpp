@@ -36,15 +36,17 @@ Geodesy::Position stringToPosition(std::string str_pos)
 }
 
 const constexpr double kph2mps(double speed) {return speed/3.6;};
+const constexpr int failure = 1;
+const constexpr int success = 0;
 
-int main(int argc, char *argv[]) {
-
-    Geodesy::Position ego = {0,0};
-    Geodesy::Position other = {0,0};
+int main(int argc, char *argv[])
+{
     std::string osmFile;
 
     int opt;
     char *usage_string = "Usage: %s [-h] [-m map] [-e ego_pos] [-o other_pos]\n";
+
+    int test_res = static_cast<int>(RiskTYpe::noRisk);
 
     while ((opt = getopt(argc, argv, "hm:e:o:")) != -1) {
 		switch (opt) {
@@ -87,9 +89,10 @@ int main(int argc, char *argv[]) {
         Risk risk = the_algorithm->calculateRisk();
         if (risk.risk != RiskTYpe::noRisk){
             std::cout << "Risk of incident with: tti=" << risk.tti << ", dti=" << risk.dti << std::endl;
+            test_res = static_cast<int>(risk.risk);
         }
 
     }
 
-    return 0;
+    return test_res;
 }
